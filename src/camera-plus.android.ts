@@ -1048,10 +1048,10 @@ export class CameraPlus extends CameraPlusBase {
       new android.view.View.OnClickListener({
         onClick: args => {
           CLog(
-            `The default Take Picture event will attempt to save the image to gallery.`
+            `The default Take Picture event will now respect the setting to save to gallery`
           );
           const opts = {
-            saveToGallery: true,
+            saveToGallery: this.saveToGallery ? true : false,
             confirm: this.confirmPhotos ? true : false,
             autoSquareCrop: this.autoSquareCrop
           };
