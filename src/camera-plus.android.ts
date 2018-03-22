@@ -1595,6 +1595,9 @@ export class CameraPlus extends CameraPlusBase {
         return;
       }
 
+      // android needs to write to the local folder so it can be picked up
+      this._saveImageToDisk(nativeFile, data);
+
       const asset = CamHelpers.assetFromPath(
         picturePath,
         reqWidth,
